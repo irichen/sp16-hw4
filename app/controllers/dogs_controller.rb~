@@ -6,7 +6,7 @@ class DogsController < ApplicationController
   def index
     @dogs = Dog.all
   end
-  
+        
   def create
     @dog = Dog.create(dog_params)
     if @dog.save
@@ -21,6 +21,6 @@ class DogsController < ApplicationController
   end
   
   def dog_params
-    params.require(:dog).permit(:name, :age) #Returns a hash that was the value of "name" and "email" from the value of "user" in params.
+    params.require(:dog).permit(:name, :age)
   end
 end
